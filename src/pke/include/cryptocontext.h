@@ -291,6 +291,7 @@ protected:
    * @param b
    */
     void TypeCheck(const ConstCiphertext<Element> a, const ConstCiphertext<Element> b, CALLER_INFO_ARGS_HDR) const {
+        std::cout << "In TypeCheck in " << __FILE__ << std::endl;
         if (a == nullptr || b == nullptr) {
             std::string errorMsg(std::string("Null Ciphertext") + CALLER_INFO);
             OPENFHE_THROW(type_error, errorMsg);
@@ -909,6 +910,7 @@ public:
    * @return scheme
    */
     const std::shared_ptr<SchemeBase<Element>> GetScheme() const {
+        std::cout << "In GetScheme in " << __FILE__ << std::endl;
         return scheme;
     }
 
@@ -1324,6 +1326,7 @@ public:
    * @return the result as a new ciphertext
    */
     Ciphertext<Element> EvalAdd(ConstCiphertext<Element> ciphertext1, ConstCiphertext<Element> ciphertext2) const {
+        std::cout << "In EvalAdd in " << __FILE__ << std::endl;
         TypeCheck(ciphertext1, ciphertext2);
         return GetScheme()->EvalAdd(ciphertext1, ciphertext2);
     }
