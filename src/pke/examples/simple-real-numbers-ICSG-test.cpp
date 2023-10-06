@@ -188,7 +188,7 @@ int main() {
     // Homomorphic addition
     std::cout << "Before EvalAdd in " << __FILE__ << std::endl;
     auto cAdd = cc->EvalAdd(c1, c2);
-
+    std::cout << "After EvalAdd in " << __FILE__ << std::endl;
     // Homomorphic subtraction
     auto cSub = cc->EvalSub(c1, c2);
 

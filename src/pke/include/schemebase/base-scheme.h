@@ -394,6 +394,7 @@ public:
 
     virtual Ciphertext<Element> EvalAdd(ConstCiphertext<Element> ciphertext1,
                                         ConstCiphertext<Element> ciphertext2) const {
+        std::cout << "In EvalAdd in " << __FILE__ << std::endl;
         VerifyLeveledSHEEnabled(__func__);
         if (!ciphertext1)
             OPENFHE_THROW(config_error, "Input first ciphertext is nullptr");
