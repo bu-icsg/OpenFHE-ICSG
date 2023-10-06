@@ -64,6 +64,7 @@ void LeveledSHEBase<Element>::EvalNegateInPlace(Ciphertext<Element>& ciphertext)
 template <class Element>
 Ciphertext<Element> LeveledSHEBase<Element>::EvalAdd(ConstCiphertext<Element> ciphertext1,
                                                      ConstCiphertext<Element> ciphertext2) const {
+    std::cout << "In EvalAdd in " << __FILE__ << std::endl;
     auto result = ciphertext1->Clone();
     EvalAddInPlace(result, ciphertext2);
     return result;
@@ -72,6 +73,7 @@ Ciphertext<Element> LeveledSHEBase<Element>::EvalAdd(ConstCiphertext<Element> ci
 template <class Element>
 void LeveledSHEBase<Element>::EvalAddInPlace(Ciphertext<Element>& ciphertext1,
                                              ConstCiphertext<Element> ciphertext2) const {
+    std::cout << "In EvalAddInPlace in " << __FILE__ << std::endl;
     EvalAddCoreInPlace(ciphertext1, ciphertext2);
 }
 
@@ -600,6 +602,7 @@ Ciphertext<Element> LeveledSHEBase<Element>::EvalAddCore(ConstCiphertext<Element
 template <class Element>
 void LeveledSHEBase<Element>::EvalAddCoreInPlace(Ciphertext<Element>& ciphertext1,
                                                  ConstCiphertext<Element> ciphertext2) const {
+    std::cout << "In EvalAddCoreInPlace in " << __FILE__ << std::endl;
     std::vector<Element>& cv1       = ciphertext1->GetElements();
     const std::vector<Element>& cv2 = ciphertext2->GetElements();
 
