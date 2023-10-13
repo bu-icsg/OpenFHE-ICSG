@@ -316,6 +316,7 @@ protected:
             ss << CALLER_INFO;
             OPENFHE_THROW(type_error, ss.str());
         }
+        std::cout << "After TypeCheck in " << __FILE__ << std::endl;
     }
 
     /**
@@ -910,7 +911,7 @@ public:
    * @return scheme
    */
     const std::shared_ptr<SchemeBase<Element>> GetScheme() const {
-        std::cout << "In GetScheme in " << __FILE__ << std::endl;
+        std::cout << "In GetScheme and returning scheme " << __FILE__ << std::endl;
         return scheme;
     }
 
@@ -1328,6 +1329,7 @@ public:
     Ciphertext<Element> EvalAdd(ConstCiphertext<Element> ciphertext1, ConstCiphertext<Element> ciphertext2) const {
         std::cout << "In EvalAdd in " << __FILE__ << std::endl;
         TypeCheck(ciphertext1, ciphertext2);
+        std::cout << "Before EvalAdd return and calling GetScheme()->EvalAdd() in return" << __FILE__ << std::endl;
         return GetScheme()->EvalAdd(ciphertext1, ciphertext2);
     }
 

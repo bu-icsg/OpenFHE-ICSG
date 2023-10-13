@@ -400,6 +400,7 @@ public:
             OPENFHE_THROW(config_error, "Input first ciphertext is nullptr");
         if (!ciphertext2)
             OPENFHE_THROW(config_error, "Input second ciphertext is nullptr");
+        std::cout << "Before EvalAdd return and calling m_LeveledSHE->EvalAdd() in return" << __FILE__ << std::endl;
         return m_LeveledSHE->EvalAdd(ciphertext1, ciphertext2);
     }
 
