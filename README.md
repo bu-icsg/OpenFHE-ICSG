@@ -32,5 +32,38 @@ Follow the [docs](https://openfhe-development.readthedocs.io/en/latest/sphinx_rs
 
 ## Misc. Docs
 
+# EvalAdd in [simple-real-numbers-ICSG-test.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-ICSG-test.cpp)
+
+
+Stack trace goes to [EvalAddCoreInPlace](https://github.com/bu-icsg/OpenFHE-ICSG/blob/cc2297656da1b14621e42b39a647d88f39273869/src/pke/lib/schemebase/base-leveledshe.cpp#L603)
+
+Can print out most of stack trace by running ```/<name of repo in container>/build/bin/examples/pke/simple-real-numbers-ICSG-test``` in container
+
+```
+void LeveledSHEBase<Element>::EvalAddCoreInPlace(Ciphertext<Element>& ciphertext1,
+                                                 ConstCiphertext<Element> ciphertext2) const {
+    std::cout << "In EvalAddCoreInPlace in " << __FILE__ << std::endl;
+    std::vector<Element>& cv1       = ciphertext1->GetElements();
+    const std::vector<Element>& cv2 = ciphertext2->GetElements();
+
+    size_t c1Size     = cv1.size();
+    size_t c2Size     = cv2.size();
+    size_t cSmallSize = std::min(c1Size, c2Size);
+
+    for (size_t i = 0; i < cSmallSize; i++) {
+        cv1[i] += cv2[i];
+    }
+
+    if (c1Size < c2Size) {
+        cv1.reserve(c2Size);
+        for (size_t i = c1Size; i < c2Size; i++) {
+            cv1.emplace_back(cv2[i]);
+        }
+    }
+}
+```
+
+
+
 
 
