@@ -62,6 +62,8 @@ void LeveledSHEBase<Element>::EvalAddCoreInPlace(Ciphertext<Element>& ciphertext
     }
 }
 ```
+![EvalAdd](https://github.com/bu-icsg/OpenFHE-ICSG/assets/84148847/452309a1-a340-41cc-80b1-8e9e4366e114)
+
 
 
 
