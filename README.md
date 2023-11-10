@@ -110,7 +110,6 @@ Ciphertext<Element> LeveledSHEBase<Element>::EvalMultCore(ConstCiphertext<Elemen
     return result;
 }
 ```
-
-
+![EvalMult](https://github.com/bu-icsg/OpenFHE-ICSG/assets/84148847/1933beb4-48d6-4fcb-99f9-6fae9d193b43)
 
 
