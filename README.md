@@ -35,7 +35,7 @@ Follow the [docs](https://openfhe-development.readthedocs.io/en/latest/sphinx_rs
 ### EvalAdd in [simple-real-numbers-ICSG-test.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-ICSG-test.cpp)
 
 
-Stack trace goes to [EvalAddCoreInPlace](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/lib/schemebase/base-leveledshe.cpp#603)
+Stack trace goes to [EvalAddCoreInPlace](https://github.com/bu-icsg/OpenFHE-ICSG/blob/e780c5b9d408daddce1bdd9cfcfb9468760d4f33/src/pke/lib/schemebase/base-leveledshe.cpp#L603)
 
 Can print out most of stack trace by running ```/<name of repo in container>/build/bin/examples/pke/simple-real-numbers-ICSG-test``` in container shell.
 
@@ -66,7 +66,7 @@ void LeveledSHEBase<Element>::EvalAddCoreInPlace(Ciphertext<Element>& ciphertext
 
 ### EvalMult for vector x vector in [simple-real-numbers-ICSG-test.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-ICSG-test.cpp)
 
-Stack trace goes to [EvalMultCore](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/lib/schemebase/base-leveledshe.cpp#656)
+Stack trace goes to [EvalMultCore](https://github.com/bu-icsg/OpenFHE-ICSG/blob/e780c5b9d408daddce1bdd9cfcfb9468760d4f33/src/pke/lib/schemebase/base-leveledshe.cpp#L656)
 
 ```
 Ciphertext<Element> LeveledSHEBase<Element>::EvalMultCore(ConstCiphertext<Element> ciphertext1,
