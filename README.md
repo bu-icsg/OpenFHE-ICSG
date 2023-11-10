@@ -35,7 +35,7 @@ Follow the [docs](https://openfhe-development.readthedocs.io/en/latest/sphinx_rs
 ### EvalAdd in [simple-real-numbers-ICSG-test.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-ICSG-test.cpp)
 
 
-Stack trace goes to [EvalAddCoreInPlace](https://github.com/bu-icsg/OpenFHE-ICSG/blob/cc2297656da1b14621e42b39a647d88f39273869/src/pke/lib/schemebase/base-leveledshe.cpp#L603)
+Stack trace goes to [EvalAddCoreInPlace](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/lib/schemebase/base-leveledshe.cpp#603)
 
 Can print out most of stack trace by running ```/<name of repo in container>/build/bin/examples/pke/simple-real-numbers-ICSG-test``` in container shell.
 
@@ -64,7 +64,52 @@ void LeveledSHEBase<Element>::EvalAddCoreInPlace(Ciphertext<Element>& ciphertext
 ```
 ![EvalAdd](https://github.com/bu-icsg/OpenFHE-ICSG/assets/84148847/452309a1-a340-41cc-80b1-8e9e4366e114)
 
+### EvalMult for vector x vector in [simple-real-numbers-ICSG-test.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-ICSG-test.cpp)
 
+Stack trace goes to [EvalAddCoreInPlace](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/lib/schemebase/base-leveledshe.cpp#656)
+
+```
+Ciphertext<Element> LeveledSHEBase<Element>::EvalMultCore(ConstCiphertext<Element> ciphertext1,
+                                                          ConstCiphertext<Element> ciphertext2) const {
+    Ciphertext<Element> result = ciphertext1->CloneZero();
+
+    std::vector<Element> cv1        = ciphertext1->GetElements();
+    const std::vector<Element>& cv2 = ciphertext2->GetElements();
+
+    size_t cResultSize = cv1.size() + cv2.size() - 1;
+    std::vector<Element> cvMult(cResultSize);
+
+    if (cv1.size() == 2 && cv2.size() == 2) {
+        cvMult[2] = (cv1[1] * cv2[1]);
+        cvMult[1] = (cv1[1] *= cv2[0]);
+        cvMult[0] = (cv2[0] * cv1[0]);
+        cvMult[1] += (cv1[0] *= cv2[1]);
+    }
+    else {
+        std::vector<bool> isFirstAdd(cResultSize, true);
+
+        for (size_t i = 0; i < cv1.size(); i++) {
+            for (size_t j = 0; j < cv2.size(); j++) {
+                if (isFirstAdd[i + j] == true) {
+                    cvMult[i + j]     = cv1[i] * cv2[j];
+                    isFirstAdd[i + j] = false;
+                }
+                else {
+                    cvMult[i + j] += cv1[i] * cv2[j];
+                }
+            }
+        }
+    }
+
+    result->SetElements(std::move(cvMult));
+    result->SetNoiseScaleDeg(ciphertext1->GetNoiseScaleDeg() + ciphertext2->GetNoiseScaleDeg());
+    result->SetScalingFactor(ciphertext1->GetScalingFactor() * ciphertext2->GetScalingFactor());
+    const auto plainMod = ciphertext1->GetCryptoParameters()->GetPlaintextModulus();
+    result->SetScalingFactorInt(
+        ciphertext1->GetScalingFactorInt().ModMul(ciphertext2->GetScalingFactorInt(), plainMod));
+    return result;
+}
+```
 
 
 
