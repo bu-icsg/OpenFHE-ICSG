@@ -66,7 +66,7 @@ void LeveledSHEBase<Element>::EvalAddCoreInPlace(Ciphertext<Element>& ciphertext
 
 ### EvalMult for vector x vector in [simple-real-numbers-ICSG-test.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-ICSG-test.cpp)
 
-Stack trace goes to [EvalAddCoreInPlace](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/lib/schemebase/base-leveledshe.cpp#656)
+Stack trace goes to [EvalMultCore](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/lib/schemebase/base-leveledshe.cpp#656)
 
 ```
 Ciphertext<Element> LeveledSHEBase<Element>::EvalMultCore(ConstCiphertext<Element> ciphertext1,
