@@ -32,6 +32,8 @@ Follow the [docs](https://openfhe-development.readthedocs.io/en/latest/sphinx_rs
 
 ## Misc. Docs
 
+Official discussion group for OpenFHE - [OpenFHE Discourse](https://openfhe.discourse.group/)
+
 ### Params Information
 
 Located in [cryptocontextparams-base.h](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/include/scheme/cryptocontextparams-base.h). Use with a CCParams<> variable to get and set params.
