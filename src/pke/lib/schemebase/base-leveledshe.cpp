@@ -659,10 +659,10 @@ Ciphertext<Element> LeveledSHEBase<Element>::EvalMultCore(ConstCiphertext<Elemen
 
     std::vector<Element> cv1        = ciphertext1->GetElements();
     const std::vector<Element>& cv2 = ciphertext2->GetElements();
-
+    
     size_t cResultSize = cv1.size() + cv2.size() - 1;
     std::vector<Element> cvMult(cResultSize);
-
+    std::cout << "SIZE cv1: " << cv1.size() << std::endl;
     if (cv1.size() == 2 && cv2.size() == 2) {
         cvMult[2] = (cv1[1] * cv2[1]);
         cvMult[1] = (cv1[1] *= cv2[0]);

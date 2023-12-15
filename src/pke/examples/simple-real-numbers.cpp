@@ -115,6 +115,8 @@ int main() {
    * http://homomorphicencryption.org/wp-content/uploads/2018/11/HomomorphicEncryptionStandardv1.1.pdf
    */
     CCParams<CryptoContextCKKSRNS> parameters;
+    parameters.SetSecurityLevel(HEStd_NotSet);
+    parameters.SetRingDim(1 << 12);
     parameters.SetMultiplicativeDepth(multDepth);
     parameters.SetScalingModSize(scaleModSize);
     parameters.SetBatchSize(batchSize);
@@ -126,7 +128,9 @@ int main() {
     cc->Enable(KEYSWITCH);
     cc->Enable(LEVELEDSHE);
     std::cout << "CKKS scheme is using ring dimension " << cc->GetRingDimension() << std::endl << std::endl;
-
+    
+    std::cout << "Modulus: " << std::hex << cc->GetModulus() << std::dec  << std::endl << std::endl;
+    std:: cout << "Multipled Mod: " << (long int)(1152921504606748673*1125899908022273*786433) << std::endl << std::endl;
     // B. Step 2: Key Generation
     /* B1) Generate encryption keys.
    * These are used for encryption/decryption, as well as in generating
@@ -184,7 +188,11 @@ int main() {
     auto c2 = cc->Encrypt(keys.publicKey, ptxt2);
 
     // Step 4: Evaluation
+    std::cout << "Ciphertext..." << std::endl;
 
+    auto ciphertextElements = c1->GetElements();
+    std::cout << "Ciphertext RNS LIMBS count " << c1->GetElements()[0].GetAllElements().size() << std::endl;
+    std::cout << "Ciphertext " << c1 << std::endl;
     // Homomorphic addition
     auto cAdd = cc->EvalAdd(c1, c2);
 
@@ -240,7 +248,6 @@ int main() {
 
     cc->Decrypt(keys.secretKey, cRot1, &result);
     result->SetLength(batchSize);
-    std::cout << std::endl << "In rotations, very small outputs (~10^-10 here) correspond to 0's:" << std::endl;
     std::cout << "x1 rotate by 1 = " << result << std::endl;
 
     cc->Decrypt(keys.secretKey, cRot2, &result);
@@ -249,3 +256,4 @@ int main() {
 
     return 0;
 }
+//==================================================================================

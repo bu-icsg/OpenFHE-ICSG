@@ -57,6 +57,8 @@ std::pair<Matrix<DCRTPoly>, RLWETrapdoorPair<DCRTPoly>> RLWETrapdoorUtility<DCRT
 
     NativeInteger q = params->GetParams()[0]->GetModulus();
 
+    std::cout << "Q value: " << q << std::endl;
+
     size_t digitCount = static_cast<size_t>(ceil(log2(q.ConvertToDouble()) / log2(base)));
 
     size_t k = params->GetParams().size() * digitCount;

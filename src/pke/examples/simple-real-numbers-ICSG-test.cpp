@@ -97,7 +97,7 @@ int main() {
    * being used for these parameters. Give ring dimension N, the maximum batch
    * size is N/2, because of the way CKKS works.
    */
-    uint32_t batchSize = 8;
+    uint32_t batchSize = 3;
 
     /* A4) Desired security level based on FHE standards.
    * This parameter can take four values. Three of the possible values
@@ -169,8 +169,8 @@ int main() {
     // Step 3: Encoding and encryption of inputs
 
     // Inputs
-    std::vector<double> x1 = {0.25, 0.5, 0.75, 1.0, 2.0, 3.0, 4.0, 5.0};
-    std::vector<double> x2 = {5.0, 4.0, 3.0, 2.0, 1.0, 0.75, 0.5, 0.25};
+    std::vector<double> x1 = {0.25, 0.5, 0.75};
+    std::vector<double> x2 = {5.0, 4.0, 3.0};
 
     // Encoding as plaintexts
     Plaintext ptxt1 = cc->MakeCKKSPackedPlaintext(x1);
