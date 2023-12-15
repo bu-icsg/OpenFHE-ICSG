@@ -602,7 +602,6 @@ Ciphertext<Element> LeveledSHEBase<Element>::EvalAddCore(ConstCiphertext<Element
 template <class Element>
 void LeveledSHEBase<Element>::EvalAddCoreInPlace(Ciphertext<Element>& ciphertext1,
                                                  ConstCiphertext<Element> ciphertext2) const {
-    std::cout << "In EvalAddCoreInPlace in " << __FILE__ << std::endl;
     std::vector<Element>& cv1       = ciphertext1->GetElements();
     const std::vector<Element>& cv2 = ciphertext2->GetElements();
 
