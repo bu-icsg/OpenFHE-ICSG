@@ -6,9 +6,9 @@ Copy for ICSG testing purposes
 
 Follow the following steps:
   * Go to [SCC](https://scc-ondemand1.bu.edu/pun/sys/dashboard) and go to a login node
-  * ssh into scc-i01 using ```ssh scc-i01```
-  * Go to a folder of your choosing and clone repository into it
-  * Create a singularity .def file (say openfhe-sandbox.def) and copy into it the following
+  * ssh into scc-i02 using ```ssh scc-i02``` (As of 2024, scc-i01 does not seem to work)
+  * Go to scratch folder using ```cd /scratch``` and make a folder in it
+  * Create a singularity .def file (say openfhe-sandbox.def) in that folder and copy into it the following
   ```
   Bootstrap: docker
   from: ubuntu:latest
@@ -19,10 +19,12 @@ Follow the following steps:
           apt-get -y install wget gcc g++ make cmake git vim
           apt-get -y clean
           mkdir -p usr4
+	  git clone -b eval-add-pke-tests <Repo URL>
   %runscript
           /bin/bash
   ```
   * Run ```singularity build --fakeroot --sandbox openfhe-sandbox-container/ openfhe-sandbox.def ``` to build container
+  * Move/Copy the sandbox container to another folder you want to use it in (Say projectnb/he/<your name>) and delete the folder you made in scratch
   * Run ```singularity shell --writable openfhe-sandbox-container/``` to open container shell
 
 ## To build project and run code
