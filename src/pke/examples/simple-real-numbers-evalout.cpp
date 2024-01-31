@@ -36,6 +36,7 @@
 #define PROFILE
 
 #include "openfhe.h"
+#include <fstream>
 
 using namespace lbcrypto;
 
@@ -181,9 +182,14 @@ int main() {
     auto c1 = cc->Encrypt(keys.publicKey, ptxt1);
     auto c2 = cc->Encrypt(keys.publicKey, ptxt2);
 
+    std::ofstream outputFile("output.txt");
+    if (!outputFile.is_open()) {
+        std::cerr << "Error opening the file!" << std::endl;
+        return 1;
+    }
     // Step 4: Evaluation
     auto ciphertextElements = c1->GetElements();
-    std::cout << "Ciphertext " << c1 << std::endl;
+    outputFile << "Ciphertext " << c1 << std::endl;
     return 0;
 }
 //==================================================================================
