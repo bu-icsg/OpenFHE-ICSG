@@ -182,14 +182,37 @@ int main() {
     auto c1 = cc->Encrypt(keys.publicKey, ptxt1);
     auto c2 = cc->Encrypt(keys.publicKey, ptxt2);
 
-    std::ofstream outputFile("output.txt");
-    if (!outputFile.is_open()) {
-        std::cerr << "Error opening the file!" << std::endl;
-        return 1;
-    }
+    std::ofstream inputc1File("input_c1.txt");
+    std::ofstream inputc2File("input_c2.txt");
+    std::ofstream outAddFile("output_add.txt");
+    std::ofstream outSubFile("output_sub.txt");
+    std::ofstream outScaMultFile("output_scalarmult.txt");
+    std::ofstream outMultFile("output_mult.txt");
+    std::ofstream outRotFile("output_rotate.txt");
+    
     // Step 4: Evaluation
-    auto ciphertextElements = c1->GetElements();
-    outputFile << "Ciphertext " << c1 << std::endl;
+    inputc1File << "Ciphertext " << c1 << std::endl;
+    inputc2File << "Ciphertext " << c2 << std::endl;
+
+    // Homomorphic addition
+    auto cAdd = cc->EvalAdd(c1, c2);
+    outAddFile << "Ciphertext " << cAdd << std::endl;
+
+    // Homomorphic subtraction
+    auto cSub = cc->EvalSub(c1, c2);
+    outSubFile << "Ciphertext " << cSub << std::endl;
+    // Homomorphic scalar multiplication
+    auto cScalar = cc->EvalMult(c1, 4.0);
+    outScaMultFile << "Ciphertext " << cScalar << std::endl;
+
+    // Homomorphic multiplication
+    auto cMul = cc->EvalMult(c1, c2);
+    outMultFile << "Ciphertext " << cMul << std::endl;
+
+    // Homomorphic rotations
+    auto cRot1 = cc->EvalRotate(c1, 1);
+    outRotFile << "Ciphertext " << cRot1 << std::endl;
+
     return 0;
 }
 //==================================================================================

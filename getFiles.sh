@@ -1,13 +1,12 @@
 #!/bin/bash
-
 if [ "$1" == "remove" ]; then
-	rm -f output.txt output_*.txt
+    rm -rf temp
 else
-	./build/bin/examples/pke/simple-real-numbers-evalout
-	while [ ! -f output.txt ]; do
+    mkdir -p temp
+    ./build/bin/examples/pke/simple-real-numbers-evalout
+    mv input_c1.txt input_c2.txt output_*.txt temp/
 
-	  sleep 1
-
-	done
-	python3 numtofile.py
+    for file in temp/*; do
+        python3 numtofile.py "$file"
+    done
 fi
