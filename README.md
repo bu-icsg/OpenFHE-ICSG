@@ -31,6 +31,7 @@ Follow the following steps:
 
 Follow the [docs](https://openfhe-development.readthedocs.io/en/latest/sphinx_rsts/intro/installation/installation.html)
 
+To get the ciphertext limbs in files, run the command ```./getFiles.sh```. The ciphertext input and output code is in [simple-real-numbers-evalout.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-evalout.cpp). The python script is located in the same directory as ```getFiles.sh``` and is called ```numtofile.py```.
 
 ## Misc. Docs
 
