@@ -43,6 +43,10 @@ Located in [cryptocontextparams-base.h](https://github.com/bu-icsg/OpenFHE-ICSG/
 
 After creating CryptoContext, can view param info by using the getters in [elemparams.h](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/core/include/lattice/elemparams.h)
 
+### Getting ciphertext limbs as text files (in hex)
+
+Run ```getFiles.sh``` (located in the main directory). This will create a folder called ```temp``` which will have the required files. Use ```./getFiles.sh remove``` to clean up.
+
 ### EvalAdd in [simple-real-numbers-ICSG-test.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-ICSG-test.cpp)
 
 
