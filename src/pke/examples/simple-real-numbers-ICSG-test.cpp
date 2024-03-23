@@ -247,9 +247,9 @@ int main() {
     //cc->Decrypt(keys.secretKey, cRot2, &result);
     //result->SetLength(batchSize);
     //std::cout << "x1 rotate by -2 = " << result << std::endl;
-    for (const auto& pair : ChineseRemainderTransformFTT<NativeVector>::m_rootOfUnityReverseTableByModulus){
-        std::cout << "Key: " <<  pair.first << "\nValue: " << pair.second << std::endl;
-	std::cout << "-----------------------------------------------------------------------" << std::endl;
-    }
+    //for (const auto& pair : ChineseRemainderTransformFTT<NativeVector>::m_rootOfUnityReverseTableByModulus){
+    //    std::cout << "Key: " <<  pair.first << "\nValue: " << pair.second << std::endl;
+    //	  std::cout << "-----------------------------------------------------------------------" << std::endl;
+    //}
     return 0;
 }
