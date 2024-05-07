@@ -51,7 +51,12 @@ To convert symbol names to readabe names do `nm <binary> | c++filt`
 Using Intel Pintool to do instrument-level profiling (can also use valgrind's callgrind)
 
 To setup:
- * Get the Intel Pintool   
+ * Get the Intel Pintool zipped file from [Intel's Pintool](https://www.intel.com/content/www/us/en/developer/articles/tool/pin-a-binary-instrumentation-tool-downloads.html)
+ * Extract the Pintool and set the `PIN_ROOT` env variable to the path of the Pintool directory extracted.
+ * Go into the `pinfiles` folder in the OpenFHE directory and make the code
+ * Run the following command `$PIN_ROOT/pin -t ./obj-intel64/function-instruc.so -- <binary>` replacing the binary with the path to the binary you want to instrument
+
+The current pin tool code file finds the number of instructions inside the function specified in the code file.
 
 ### Getting ciphertext limbs as text files (in hex)
 
