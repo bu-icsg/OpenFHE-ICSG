@@ -43,6 +43,16 @@ Located in [cryptocontextparams-base.h](https://github.com/bu-icsg/OpenFHE-ICSG/
 
 After creating CryptoContext, can view param info by using the getters in [elemparams.h](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/core/include/lattice/elemparams.h)
 
+### Profiling the Library
+
+To get the symbol names from a binary do `nm <binary>`
+To convert symbol names to readabe names do `nm <binary> | c++filt`
+
+Using Intel Pintool to do instrument-level profiling (can also use valgrind's callgrind)
+
+To setup:
+ * Get the Intel Pintool   
+
 ### Getting ciphertext limbs as text files (in hex)
 
 Run ```getFiles.sh``` (located in the main directory). This will create a folder called ```temp``` which will have the required files. Use ```./getFiles.sh remove``` to clean up.
