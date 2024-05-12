@@ -31,8 +31,6 @@ Follow the following steps:
 
 Follow the [docs](https://openfhe-development.readthedocs.io/en/latest/sphinx_rsts/intro/installation/installation.html)
 
-To get the ciphertext limbs in files, run the command ```./getFiles.sh```. The ciphertext input and output code is in [simple-real-numbers-evalout.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-evalout.cpp). The python script is located in the same directory as ```getFiles.sh``` and is called ```numtofile.py```.
-
 ## Misc. Docs
 
 Official discussion group for OpenFHE - [OpenFHE Discourse](https://openfhe.discourse.group/)
@@ -60,7 +58,8 @@ The current pin tool code file finds the number of instructions inside the funct
 
 ### Getting ciphertext limbs as text files (in hex)
 
-Run ```getFiles.sh``` (located in the main directory). This will create a folder called ```temp``` which will have the required files. Use ```./getFiles.sh remove``` to clean up.
+Run ```getFiles.sh``` (located in the main directory). This will create a folder called ```temp``` which will have the required files. Use ```./getFiles.sh remove``` to clean up. The ciphertext input and output code is in [simple-real-numbers-evalout.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-evalout.cpp). The python script is located in the same directory as ```getFiles.sh``` and is called ```numtofile.py```.
+
 
 ### EvalAdd in [simple-real-numbers-ICSG-test.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-ICSG-test.cpp)
 
