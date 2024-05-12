@@ -56,6 +56,10 @@ To setup:
 
 The current pin tool code file finds the number of instructions inside the function specified in the code file.
 
+To use Valgrind tools:
+ * Run `valgrind --tool=callgrind --dump-instr=yes <binary>` inside the `profile` folder
+ * Run `kcachegrind <callgrind.out.<pid>` on the callgrind.out.<pid> file that gets created
+
 ### Getting ciphertext limbs as text files (in hex)
 
 Run ```getFiles.sh``` (located in the main directory). This will create a folder called ```temp``` which will have the required files. Use ```./getFiles.sh remove``` to clean up. The ciphertext input and output code is in [simple-real-numbers-evalout.cpp](https://github.com/bu-icsg/OpenFHE-ICSG/blob/eval-add-pke-tests/src/pke/examples/simple-real-numbers-evalout.cpp). The python script is located in the same directory as ```getFiles.sh``` and is called ```numtofile.py```.

@@ -35,7 +35,7 @@
 
 #define PROFILE
 
-#include <valgrind/callgrind.h>
+//#include <valgrind/callgrind.h>
 #include "openfhe.h"
 
 using namespace lbcrypto;
@@ -188,11 +188,11 @@ int main() {
 
     // Homomorphic addition
     //std::cout << "Before EvalAdd in " << __FILE__ << std::endl;
-    CALLGRIND_START_INSTRUMENTATION;
-    CALLGRIND_TOGGLE_COLLECT;
+    //CALLGRIND_START_INSTRUMENTATION;
+    //CALLGRIND_TOGGLE_COLLECT;
     auto cAdd = cc->EvalAdd(c1, c2);
-    CALLGRIND_TOGGLE_COLLECT;
-    CALLGRIND_STOP_INSTRUMENTATION;
+    //CALLGRIND_TOGGLE_COLLECT;
+    //CALLGRIND_STOP_INSTRUMENTATION;
     //std::cout << "After EvalAdd in " << __FILE__ << std::endl;
     // Homomorphic subtraction
     //auto cSub = cc->EvalSub(c1, c2);
