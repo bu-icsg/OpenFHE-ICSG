@@ -1,0 +1,212 @@
+Starting program execution...
+Function: _ZNK8lbcrypto14LeveledSHEBaseINS_12DCRTPolyImplIN9bigintdyn9mubintvecINS2_5ubintImEEEEEEE18EvalAddCoreInPlaceERSt10shared_ptrINS_14CiphertextImplIS7_EEES9_IKSB_E | Total Instructions: 65 | Memory Instructions: 28 | Control Instructions: 5 | Arithmetic Instructions: 15
+Function: _ZNK8lbcrypto13LeveledSHERNS14EvalAddInPlaceERSt10shared_ptrINS_14CiphertextImplINS_12DCRTPolyImplIN9bigintdyn9mubintvecINS4_5ubintImEEEEEEEEES1_IKSA_E | Total Instructions: 81 | Memory Instructions: 42 | Control Instructions: 10 | Arithmetic Instructions: 4
+Function: _ZNK8lbcrypto13LeveledSHERNS7EvalAddESt10shared_ptrIKNS_14CiphertextImplINS_12DCRTPolyImplIN9bigintdyn9mubintvecINS4_5ubintImEEEEEEEEESC_ | Total Instructions: 43 | Memory Instructions: 26 | Control Instructions: 2 | Arithmetic Instructions: 3
+Function: _ZNK8lbcrypto10SchemeBaseINS_12DCRTPolyImplIN9bigintdyn9mubintvecINS2_5ubintImEEEEEEE7EvalAddESt10shared_ptrIKNS_14CiphertextImplIS7_EEESD_ | Total Instructions: 86 | Memory Instructions: 44 | Control Instructions: 12 | Arithmetic Instructions: 3
+Function: _ZNK8lbcrypto17CryptoContextImplINS_12DCRTPolyImplIN9bigintdyn9mubintvecINS2_5ubintImEEEEEEE7EvalAddESt10shared_ptrIKNS_14CiphertextImplIS7_EEESD_ | Total Instructions: 105 | Memory Instructions: 54 | Control Instructions: 21 | Arithmetic Instructions: 2
+MOVHLPS - 1
+
+CMOVL - 2
+
+CMPPD - 1
+
+NOP - 2943
+
+UNPCKHPD - 14
+
+ADDPD - 5
+
+PUNPCKLBW - 24
+
+SUBPD - 5
+
+SHL - 724
+
+CMOVNZ - 104
+
+BSF - 27
+
+BSR - 78
+
+CMOVNLE - 10
+
+PUNPCKHWD - 8
+
+SHUFPS - 8
+
+CMOVLE - 5
+
+SHLD - 6
+
+SAR - 375
+
+RDRAND - 1
+
+SHRD - 33
+
+SETNBE - 12
+
+CVTSS2SD - 1
+
+MULSD - 318
+
+PUNPCKLQDQ - 351
+
+ORPD - 32
+
+CMPSD_XMM - 21
+
+CVTTSD2SI - 40
+
+MOVAPD - 288
+
+SETNB - 8
+
+VMOVAPD - 1
+
+COMISD - 32
+
+MOVSXD - 94
+
+MULPD - 9
+
+MOVZX - 212
+
+CVTSI2SD - 86
+
+ROR - 392
+
+ADDSD - 198
+
+SYSCALL - 61
+
+XORPD - 4
+
+VMOVQ - 4
+
+PADDQ - 21
+
+PCMPEQD - 1
+
+MOVSX - 11
+
+ROL - 396
+
+UCOMISD - 36
+
+TEST - 4171
+
+CMOVB - 34
+
+BT - 9
+
+SETZ - 73
+
+CDQE - 38
+
+BTS - 2
+
+PSHUFD - 30
+
+DIVPD - 2
+
+SETB - 14
+
+SHUFPD - 9
+
+PUNPCKLWD - 36
+
+ANDNPD - 23
+
+SETBE - 4
+
+PXOR - 626
+
+MOV - 11452
+
+PSRLDQ - 145
+
+MOVDQA - 302
+
+PSLLDQ - 171
+
+PSUBB - 184
+
+DIVSD - 20
+
+SETO - 10
+
+CMOVNL - 1
+
+PCMPEQB - 422
+
+PAND - 6
+
+MOVD - 63
+
+CMOVNS - 21
+
+CMOVNB - 32
+
+CMOVNBE - 43
+
+PAUSE - 2
+
+SETP - 4
+
+CQO - 13
+
+SETNLE - 1
+
+ANDPD - 68
+
+CMOVS - 28
+
+XGETBV - 2
+
+VMULSD - 8
+
+CPUID - 40
+
+RDTSCP - 1
+
+BSWAP - 4
+
+PMOVMSKB - 271
+
+POR - 141
+
+MOVSD_XMM - 1
+
+LEA - 5077
+
+UNPCKLPD - 13
+
+SETNZ - 95
+
+CMOVZ - 48
+
+PACKUSWB - 2
+
+SHR - 660
+
+SUBSD - 111
+
+XCHG - 13
+
+VADDSD - 7
+
+PMINUB - 6
+
+PUNPCKLDQ - 23
+
+CMOVBE - 57
+
+MOVQ - 697
+
+RDTSC - 10
+
+VSUBSD - 1
+
+CMP - 3855
+

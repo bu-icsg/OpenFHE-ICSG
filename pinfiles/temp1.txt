@@ -1,0 +1,4 @@
+Starting program execution...
+Function: _ZNK8lbcrypto17CryptoContextImplINS_12DCRTPolyImplIN9bigintdyn9mubintvecINS2_5ubintImEEEEEEE10EvalRotateESt10shared_ptrIKNS_14CiphertextImplIS7_EEEi | Total Instructions: 146004045 | Memory Instructions: 40418617 | Control Instructions: 15287288 | Arithmetic Instructions: 57072132 | Out if a total ISA count: 1261811795
+Function: _ZNK8lbcrypto17CryptoContextImplINS_12DCRTPolyImplIN9bigintdyn9mubintvecINS2_5ubintImEEEEEEE10EvalRotateESt10shared_ptrIKNS_14CiphertextImplIS7_EEEi | Total Instructions: 1 | Memory Instructions: 0 | Control Instructions: 1 | Arithmetic Instructions: 0 | Out if a total ISA count: 1261811795
+Function: _ZNK8lbcrypto17CryptoContextImplINS_12DCRTPolyImplIN9bigintdyn9mubintvecINS2_5ubintImEEEEEEE10EvalRotateESt10shared_ptrIKNS_14CiphertextImplIS7_EEEi | Total Instructions: 1 | Memory Instructions: 0 | Control Instructions: 1 | Arithmetic Instructions: 0 | Out if a total ISA count: 1261811795

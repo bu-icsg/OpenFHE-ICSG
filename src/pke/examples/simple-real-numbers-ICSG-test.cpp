@@ -190,7 +190,7 @@ int main() {
     //std::cout << "Before EvalAdd in " << __FILE__ << std::endl;
     //CALLGRIND_START_INSTRUMENTATION;
     //CALLGRIND_TOGGLE_COLLECT;
-    auto cAdd = cc->EvalAdd(c1, c2);
+    //auto cAdd = cc->EvalAdd(c1, c2);
     //CALLGRIND_TOGGLE_COLLECT;
     //CALLGRIND_STOP_INSTRUMENTATION;
     //std::cout << "After EvalAdd in " << __FILE__ << std::endl;
@@ -204,7 +204,7 @@ int main() {
     //auto cMul = cc->EvalMult(c1, c2);
 
     // Homomorphic rotations
-    //auto cRot1 = cc->EvalRotate(c1, 1);
+    auto cRot1 = cc->EvalRotate(c1, 1);
     //auto cRot2 = cc->EvalRotate(c1, -2);
 
     // Step 5: Decryption and output
